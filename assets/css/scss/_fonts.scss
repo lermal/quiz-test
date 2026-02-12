@@ -1,0 +1,17 @@
+$fonts-path: "/assets/fonts";
+
+@mixin font-face($family, $file, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $family;
+		src:
+			url("#{$fonts-path}/#{$file}.woff2") format("woff2"),
+			url("#{$fonts-path}/#{$file}.woff") format("woff");
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+	}
+}
+
+@include font-face("PP Neue Machina", "PPNeueMachina-Ultrabold", bold);
+@include font-face("Raleway-v4020", "Raleway-v4020-Medium", 500);
+@include font-face("Raleway-v4020", "Raleway-v4020-SemiBold", 600);

@@ -15,6 +15,40 @@
 			<!-- HEADER_CONTAINER START -->
 			<div class="header__container">
 				<a href="#" class="header__logo">Super Quiz</a>
+				<button
+					type="button"
+					class="header__burger"
+					aria-label="Открыть меню"
+					aria-expanded="false"
+					id="mobile-menu-open">
+					<svg
+						width="117"
+						height="17"
+						viewBox="0 0 117 17"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+						aria-hidden="true">
+						<rect y="3.41418" width="117" height="1" fill="white" />
+						<rect y="7.41418" width="117" height="1" fill="white" />
+						<rect y="11.4142" width="117" height="1" fill="white" />
+						<rect
+							class="header__burger-diagonal"
+							x="15.2929"
+							y="14.1421"
+							width="19"
+							height="2"
+							fill="white"
+							stroke="black" />
+						<rect
+							class="header__burger-diagonal"
+							x="86.2929"
+							y="14.1421"
+							width="19"
+							height="2"
+							fill="white"
+							stroke="black" />
+					</svg>
+				</button>
 				<!-- NAVBAR START -->
 				<nav class="navbar">
 					<!-- NAVBAR_LIST START -->
@@ -28,17 +62,179 @@
 						<li class="navbar__item">
 							<a href="#reviews" class="navbar__link">Отзывы</a>
 						</li>
-						<li class="navbar__item">
-							<a href="#footer" class="navbar__link">Не главная</a>
+						<li class="navbar__item navbar__item_dropdown">
+							<a href="#footer" class="btn navbar__link navbar__link_trigger"
+								>Не главная</a
+							>
+							<ul class="navbar__dropdown">
+								<li class="navbar__dropdown-item">
+									<a href="#" class="btn navbar__dropdown-link">Подпункт</a>
+								</li>
+								<li class="navbar__dropdown-item">
+									<a href="#" class="btn navbar__dropdown-link">Еще подпункт</a>
+								</li>
+								<li class="navbar__dropdown-item">
+									<a href="#" class="btn navbar__dropdown-link"
+										>И еще один подпункт</a
+									>
+								</li>
+							</ul>
 						</li>
 					</ul>
 					<!-- NAVBAR_LIST END -->
 				</nav>
+				<div class="navbar__buttons">
+					<button class="btn navbar__button">Связаться с нами</button>
+					<a class="navbar__social-btn" href="https://tiktok.com/">
+						<img
+							src="assets/img/tiktok_small.png"
+							alt="TikTok"
+							width="40"
+							height="40" />
+					</a>
+					<a class="navbar__social-btn" href="https://vk.com/">
+						<img
+							src="assets/img/vk_small.png"
+							alt="VK"
+							width="40"
+							height="40" />
+					</a>
+					<a class="navbar__social-btn" href="https://telegram.com/">
+						<img
+							src="assets/img/telegram_small.png"
+							alt="Telegram"
+							width="40"
+							height="40" />
+					</a>
+				</div>
 				<!-- NAVBAR END -->
 			</div>
 			<!-- HEADER_CONTAINER END -->
 		</header>
 		<!-- HEADER END -->
+		<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+			<div class="mobile-menu__panel">
+				<nav class="mobile-menu__nav">
+					<ul class="mobile-menu__list">
+						<li class="mobile-menu__item">
+							<a href="#header" class="mobile-menu__link"
+								>Главная<svg
+									class="mobile-menu__arrow"
+									width="10"
+									height="18"
+									viewBox="0 0 10 18"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M1 1L8.29289 8.29289C8.68342 8.68342 8.68342 9.31658 8.29289 9.70711L1 17"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round" />
+								</svg>
+							</a>
+							<div class="mobile-menu__dropdown-overlay"></div>
+						</li>
+						<li class="mobile-menu__item">
+							<a href="#quiz" class="mobile-menu__link"
+								>Квиз<svg
+									class="mobile-menu__arrow"
+									width="10"
+									height="18"
+									viewBox="0 0 10 18"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M1 1L8.29289 8.29289C8.68342 8.68342 8.68342 9.31658 8.29289 9.70711L1 17"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round" />
+								</svg>
+								></a
+							>
+						</li>
+						<li class="mobile-menu__item">
+							<a href="#reviews" class="mobile-menu__link"
+								>Отзывы<svg
+									class="mobile-menu__arrow"
+									width="10"
+									height="18"
+									viewBox="0 0 10 18"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M1 1L8.29289 8.29289C8.68342 8.68342 8.68342 9.31658 8.29289 9.70711L1 17"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round" />
+								</svg>
+								></a
+							>
+						</li>
+						<li class="mobile-menu__item mobile-menu__item_has-dropdown">
+							<button
+								type="button"
+								class="mobile-menu__link mobile-menu__link_trigger"
+								aria-expanded="false"
+								aria-controls="mobile-dropdown"
+								id="mobile-dropdown-trigger">
+								Не главная<svg
+									class="mobile-menu__arrow mobile-menu__arrow_trigger"
+									width="10"
+									height="18"
+									viewBox="0 0 10 18"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M1 1L8.29289 8.29289C8.68342 8.68342 8.68342 9.31658 8.29289 9.70711L1 17"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round" />
+								</svg>
+							</button>
+							<ul class="mobile-menu__dropdown" id="mobile-dropdown" hidden>
+								<li class="mobile-menu__dropdown-item">
+									<a href="#" class="mobile-menu__dropdown-link">Подпункт</a>
+								</li>
+								<li class="mobile-menu__dropdown-item">
+									<a href="#" class="mobile-menu__dropdown-link"
+										>Еще подпункт</a
+									>
+								</li>
+								<li class="mobile-menu__dropdown-item">
+									<a href="#" class="mobile-menu__dropdown-link"
+										>И еще один подпункт</a
+									>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<div class="mobile-menu__social">
+					<a class="mobile-menu__social-btn" href="https://tiktok.com/">
+						<img
+							src="assets/img/tiktok_small.png"
+							alt="TikTok"
+							width="40"
+							height="40" />
+					</a>
+					<a class="mobile-menu__social-btn" href="https://vk.com/">
+						<img
+							src="assets/img/vk_small.png"
+							alt="VK"
+							width="40"
+							height="40" />
+					</a>
+					<a class="mobile-menu__social-btn" href="https://telegram.com/">
+						<img
+							src="assets/img/telegram_small.png"
+							alt="Telegram"
+							width="40"
+							height="40" />
+					</a>
+				</div>
+				<button class="btn mobile-menu__cta">Связаться с нами</button>
+			</div>
+		</div>
 		<!-- BANNER START -->
 		<section class="banner" id="banner" aria-labelledby="banner-heading">
 			<!-- BANNER_CONTAINER START -->
@@ -48,7 +244,7 @@
 					Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей,
 					которые любят проходить тесты!
 				</p>
-				<a href="#" class="btn banner__button">Пройти квиз</a>
+				<a href="#quiz" class="btn banner__button">Пройти супер-квиз</a>
 			</div>
 			<!-- BANNER_CONTAINER END -->
 		</section>
@@ -58,14 +254,26 @@
 			class="reactions"
 			id="reactions"
 			aria-labelledby="reactions-heading">
-			<h2 id="reactions-heading" class="reactions__title">Реакции</h2>
+			<h2 id="reactions-heading" class="reactions__title title__hidden">
+				Реакции
+			</h2>
 			<!-- REACTIONS_LIST START -->
 			<ul class="reactions__list">
-				<li class="reactions__item">😋 Восхитительно</li>
-				<li class="reactions__item">😎 Лучше не бывает</li>
-				<li class="reactions__item">😍 Где найти еще?</li>
-				<li class="reactions__item">🤩 В натуре четко!</li>
-				<li class="reactions__item">😍 Круто</li>
+				<li class="reactions__item">
+					<span class="reactions__item_icon">😋</span> Восхитительно
+				</li>
+				<li class="reactions__item">
+					<span class="reactions__item_icon">😎</span> Лучше не бывает
+				</li>
+				<li class="reactions__item">
+					<span class="reactions__item_icon">😍</span> Где найти еще?
+				</li>
+				<li class="reactions__item">
+					<span class="reactions__item_icon">🤩</span> В натуре четко!
+				</li>
+				<li class="reactions__item">
+					<span class="reactions__item_icon">😍</span> Круто
+				</li>
 			</ul>
 			<!-- REACTIONS_LIST END -->
 		</section>
@@ -409,6 +617,7 @@
 			</div>
 		</footer>
 		<!-- FOOTER END -->
+		<script src="assets/js/main.js"></script>
 	</body>
 	<!-- BODY END -->
 </html>
