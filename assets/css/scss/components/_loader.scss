@@ -1,0 +1,43 @@
+@use "variables" as *;
+@use "functions" as *;
+
+.page-loader {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: rem(24px);
+	background-color: $color-primary-lightest;
+	transition: opacity 0.4s ease, visibility 0.4s ease;
+
+	&_hidden {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+
+	&__spinner {
+		width: rem(48px);
+		height: rem(48px);
+		border: rem(4px) solid $color-grey-light;
+		border-top-color: $color-primary;
+		border-radius: 50%;
+		animation: page-loader-spin 0.8s linear infinite;
+	}
+
+	&__text {
+		font-family: $font-secondary;
+		font-size: rem(18px);
+		font-weight: 500;
+		color: $color-black;
+	}
+}
+
+@keyframes page-loader-spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

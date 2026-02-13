@@ -1,15 +1,36 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 	<!-- HEAD START -->
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="keywords"
+			content="Super Quiz, квиз, тесты, опросы, проверка знаний" />
+		<meta name="title" content="Super Quiz" />
+		<meta
+			name="description"
+			content="Super Quiz — пройди квиз и узнай больше о себе. Тесты для тех, кто любит проходить опросы и проверять свои знания." />
 		<title>Super Quiz</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="assets/css/style.css" />
+		<link
+			rel="preload"
+			href="assets/img/banner_phone_bg.png"
+			as="image"
+			media="(max-width: 500px)" />
 	</head>
 	<!-- HEAD END -->
 	<!-- BODY START -->
 	<body>
+		<div
+			class="page-loader"
+			id="page-loader"
+			aria-hidden="false"
+			aria-live="polite">
+			<div class="page-loader__spinner" aria-hidden="true"></div>
+			<span class="page-loader__text">Загрузка...</span>
+		</div>
 		<!-- HEADER START -->
 		<header class="header" id="header">
 			<!-- HEADER_CONTAINER START -->
@@ -98,25 +119,38 @@
 						Связаться с нами
 					</button>
 					<a class="navbar__social-btn" href="https://tiktok.com/">
-						<img
-							src="assets/img/tiktok_small.png"
-							alt="TikTok"
-							width="40"
-							height="40" />
+						<picture
+							><source
+								type="image/webp"
+								srcset="assets/img/tiktok_small.webp" />
+							<img
+								src="assets/img/tiktok_small.png"
+								alt="TikTok"
+								width="40"
+								height="40"
+						/></picture>
 					</a>
 					<a class="navbar__social-btn" href="https://vk.com/">
-						<img
-							src="assets/img/vk_small.png"
-							alt="VK"
-							width="40"
-							height="40" />
+						<picture
+							><source type="image/webp" srcset="assets/img/vk_small.webp" />
+							<img
+								src="assets/img/vk_small.png"
+								alt="VK"
+								width="40"
+								height="40"
+						/></picture>
 					</a>
 					<a class="navbar__social-btn" href="https://telegram.com/">
-						<img
-							src="assets/img/telegram_small.png"
-							alt="Telegram"
-							width="40"
-							height="40" />
+						<picture
+							><source
+								type="image/webp"
+								srcset="assets/img/telegram_small.webp" />
+							<img
+								src="assets/img/telegram_small.png"
+								alt="Telegram"
+								width="40"
+								height="40"
+						/></picture>
 					</a>
 				</div>
 				<!-- NAVBAR END -->
@@ -222,25 +256,38 @@
 				<div class="mobile-menu__footer">
 					<div class="mobile-menu__social">
 						<a class="mobile-menu__social-btn" href="https://tiktok.com/">
-							<img
-								src="assets/img/tiktok_small.png"
-								alt="TikTok"
-								width="40"
-								height="40" />
+							<picture
+								><source
+									type="image/webp"
+									srcset="assets/img/tiktok_small.webp" />
+								<img
+									src="assets/img/tiktok_small.png"
+									alt="TikTok"
+									width="40"
+									height="40"
+							/></picture>
 						</a>
 						<a class="mobile-menu__social-btn" href="https://vk.com/">
-							<img
-								src="assets/img/vk_small.png"
-								alt="VK"
-								width="40"
-								height="40" />
+							<picture
+								><source type="image/webp" srcset="assets/img/vk_small.webp" />
+								<img
+									src="assets/img/vk_small.png"
+									alt="VK"
+									width="40"
+									height="40"
+							/></picture>
 						</a>
 						<a class="mobile-menu__social-btn" href="https://telegram.com/">
-							<img
-								src="assets/img/telegram_small.png"
-								alt="Telegram"
-								width="40"
-								height="40" />
+							<picture
+								><source
+									type="image/webp"
+									srcset="assets/img/telegram_small.webp" />
+								<img
+									src="assets/img/telegram_small.png"
+									alt="Telegram"
+									width="40"
+									height="40"
+							/></picture>
 						</a>
 					</div>
 					<button
@@ -612,16 +659,20 @@
 							<div class="embla__slide">
 								<div
 									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_1_bg.png);
-									">
+									data-bg="assets/img/reviews/review_1_bg.png">
 									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar1.png"
-											alt="Тимур Никитенко"
-											width="80"
-											height="80" />
+										<picture
+											><source
+												type="image/webp"
+												srcset="assets/img/reviews/avatar1.webp" />
+											<img
+												class="reviews__item-content_avatar"
+												src="assets/img/reviews/avatar1.png"
+												alt="Тимур Никитенко"
+												width="80"
+												height="80"
+												loading="lazy"
+										/></picture>
 										<div class="reviews__item-content_name">
 											Тимур Никитенко
 										</div>
@@ -634,16 +685,20 @@
 							<div class="embla__slide">
 								<div
 									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_1_bg.png);
-									">
+									data-bg="assets/img/reviews/review_1_bg.png">
 									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar1.png"
-											alt="Андрей Пархимович"
-											width="80"
-											height="80" />
+										<picture
+											><source
+												type="image/webp"
+												srcset="assets/img/reviews/avatar1.webp" />
+											<img
+												class="reviews__item-content_avatar"
+												src="assets/img/reviews/avatar1.png"
+												alt="Андрей Пархимович"
+												width="80"
+												height="80"
+												loading="lazy"
+										/></picture>
 										<div class="reviews__item-content_name">
 											Андрей Пархимович
 										</div>
@@ -659,16 +714,20 @@
 							<div class="embla__slide">
 								<div
 									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_2_bg.png);
-									">
+									data-bg="assets/img/reviews/review_2_bg.png">
 									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar2.png"
-											alt="Тимур Никитенко"
-											width="80"
-											height="80" />
+										<picture
+											><source
+												type="image/webp"
+												srcset="assets/img/reviews/avatar2.webp" />
+											<img
+												class="reviews__item-content_avatar"
+												src="assets/img/reviews/avatar2.png"
+												alt="Тимур Никитенко"
+												width="80"
+												height="80"
+												loading="lazy"
+										/></picture>
 										<div class="reviews__item-content_name">
 											Тимур Никитенко
 										</div>
@@ -683,16 +742,20 @@
 							<div class="embla__slide">
 								<div
 									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_3_bg.png);
-									">
+									data-bg="assets/img/reviews/review_3_bg.png">
 									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar3.png"
-											alt="Артур Усович"
-											width="80"
-											height="80" />
+										<picture
+											><source
+												type="image/webp"
+												srcset="assets/img/reviews/avatar3.webp" />
+											<img
+												class="reviews__item-content_avatar"
+												src="assets/img/reviews/avatar3.png"
+												alt="Артур Усович"
+												width="80"
+												height="80"
+												loading="lazy"
+										/></picture>
 										<div class="reviews__item-content_name">Артур Усович</div>
 										<p class="reviews__item-content_description">
 											Задача организации, в особенности же убеждённость
@@ -705,16 +768,20 @@
 							<div class="embla__slide">
 								<div
 									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_1_bg.png);
-									">
+									data-bg="assets/img/reviews/review_1_bg.png">
 									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar2.png"
-											alt="Егор Грей"
-											width="80"
-											height="80" />
+										<picture
+											><source
+												type="image/webp"
+												srcset="assets/img/reviews/avatar2.webp" />
+											<img
+												class="reviews__item-content_avatar"
+												src="assets/img/reviews/avatar2.png"
+												alt="Егор Грей"
+												width="80"
+												height="80"
+												loading="lazy"
+										/></picture>
 										<div class="reviews__item-content_name">Егор Грей</div>
 										<p class="reviews__item-content_description">
 											Разнообразный и богатый опыт говорит нам, что высокое
@@ -794,9 +861,14 @@
 						<a href="#" class="footer__icon-link" aria-label="TikTok">
 							<picture>
 								<source
+									type="image/webp"
+									media="(max-width: 500px)"
+									srcset="assets/img/footer_tiktok_mobile.webp" />
+								<source
 									media="(max-width: 500px)"
 									srcset="assets/img/footer_tiktok_mobile.png" />
-								<img src="assets/img/tiktok.png" alt="TikTok" />
+								<source type="image/webp" srcset="assets/img/tiktok.webp" />
+								<img src="assets/img/tiktok.png" alt="TikTok" loading="lazy" />
 							</picture>
 						</a>
 						<a
@@ -806,9 +878,17 @@
 							aria-label="ВКонтакте">
 							<picture>
 								<source
+									type="image/webp"
+									media="(max-width: 500px)"
+									srcset="assets/img/footer_vk_mobile.webp" />
+								<source
 									media="(max-width: 500px)"
 									srcset="assets/img/footer_vk_mobile.png" />
-								<img src="assets/img/vk_small.png" alt="ВКонтакте" />
+								<source type="image/webp" srcset="assets/img/vk_small.webp" />
+								<img
+									src="assets/img/vk_small.png"
+									alt="ВКонтакте"
+									loading="lazy" />
 							</picture>
 						</a>
 						<a
@@ -818,9 +898,19 @@
 							aria-label="Telegram">
 							<picture>
 								<source
+									type="image/webp"
+									media="(max-width: 500px)"
+									srcset="assets/img/footer_telegram_mobile.webp" />
+								<source
 									media="(max-width: 500px)"
 									srcset="assets/img/footer_telegram_mobile.png" />
-								<img src="assets/img/telegram_small.png" alt="Telegram" />
+								<source
+									type="image/webp"
+									srcset="assets/img/telegram_small.webp" />
+								<img
+									src="assets/img/telegram_small.png"
+									alt="Telegram"
+									loading="lazy" />
 							</picture>
 						</a>
 					</div>
@@ -832,12 +922,13 @@
 		<div
 			class="modal"
 			id="contact-modal"
+			role="dialog"
 			aria-hidden="true"
 			aria-modal="false"
 			aria-labelledby="contact-modal-title">
 			<div class="modal__inner">
 				<div class="modal__backdrop"></div>
-				<div class="modal__dialog" role="dialog">
+				<div class="modal__dialog">
 					<button
 						type="button"
 						class="modal__close"
@@ -1031,10 +1122,10 @@
 				</div>
 			</div>
 		</div>
-		<script src="/assets/libs/gsap.min.js"></script>
-		<script src="/assets/libs/Flip.min.js"></script>
-		<script src="/assets/libs/embla-carousel.umd.js"></script>
-		<script src="/assets/js/main.js"></script>
+		<script src="/assets/libs/gsap.min.js" defer></script>
+		<script src="/assets/libs/Flip.min.js" defer></script>
+		<script src="/assets/libs/embla-carousel.umd.js" defer></script>
+		<script src="/assets/js/main.js" defer></script>
 	</body>
 	<!-- BODY END -->
 </html>
