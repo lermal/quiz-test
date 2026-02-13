@@ -1412,7 +1412,7 @@ input:not([type])::placeholder {
 .quiz__answer-block:hover {
   cursor: url("../img/cursor_hover.png") 12 0, pointer;
 }
-.quiz_thank .quiz__btn_next {
+.quiz__cards-item_thank .quiz__btn_next {
   display: none;
 }
 .quiz__btn {

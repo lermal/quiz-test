@@ -2,7 +2,7 @@
 @use "../../functions" as *;
 
 @mixin quiz-buttons {
-	&_thank &__btn_next {
+	&__cards-item_thank &__btn_next {
 		display: none;
 	}
 
