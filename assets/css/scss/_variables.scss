@@ -1,5 +1,7 @@
 $mobile-max: 1279px;
 $mobile-min: 1280px;
+$tablet-max: 500px;
+$tablet-min: 501px;
 
 // Основные фирменные цвета
 $color-primary: #9e00ff;
@@ -17,3 +19,8 @@ $color-grey-light: #f2f2f2;
 // Основные шрифты
 $font-primary: "PP Neue Machina", sans-serif;
 $font-secondary: "Raleway-v4020", sans-serif;
+
+// Настройки курсора
+$cursor-hover-url: "../img/cursor_hover.png";
+$cursor-hover-x: 12;
+$cursor-hover-y: 0;

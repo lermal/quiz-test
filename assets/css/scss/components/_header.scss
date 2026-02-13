@@ -26,7 +26,7 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: rem(32px);
-		padding: rem(6px) rem(48px);
+		padding: 0 rem(48px);
 		min-width: 0;
 		overflow: visible;
 	}
@@ -36,20 +36,25 @@
 		font-size: rem(36px);
 		font-weight: bold;
 		margin-top: em(-8px);
+		text-wrap: nowrap;
 	}
 
 	&__burger {
 		display: none;
-		flex: 1;
+		flex: 0 0 auto;
 		min-width: 0;
-		height: rem(24px);
-		padding: 0;
+		max-width: 133px;
+		width: 100%;
+		padding: 3px 8px;
 		border: none;
 		border-radius: rem(16px);
 		background-color: $color-black;
 		color: $color-white;
 		cursor: pointer;
-		transition: background-color 0.2s;
+		transition: background-color 0.15s;
+
+		align-items: center;
+		justify-content: center;
 
 		&:hover {
 			background-color: $color-primary;
@@ -57,24 +62,18 @@
 
 		svg {
 			display: block;
-			width: 100%;
-			height: 100%;
+
 			object-fit: contain;
 			object-position: center;
 		}
 
 		&-diagonal {
 			opacity: 0;
-			transform: rotate(0deg);
-			transform-origin: 0 0;
-			transition:
-				opacity 0.2s,
-				transform 0.2s;
+			transition: opacity 0.15s;
 		}
 
 		&[aria-expanded="true"] &-diagonal {
 			opacity: 1;
-			transform: rotate(-45deg);
 		}
 	}
 }
@@ -83,6 +82,11 @@
 	min-width: 0;
 	overflow: visible;
 
+	&__list-wrap {
+		position: relative;
+		display: block;
+	}
+
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
@@ -90,10 +94,23 @@
 		overflow: visible;
 	}
 
+	&__active-line {
+		position: absolute;
+		bottom: 0;
+		height: rem(4px);
+		background-color: $color-black;
+		border-radius: rem(32px) rem(32px) 0 0;
+		transition:
+			left 0.25s ease,
+			width 0.25s ease,
+			opacity 0.25s ease;
+		pointer-events: none;
+	}
+
 	&__item {
 		font-family: $font-secondary;
 		font-size: rem(20px);
-		padding: rem(16px) 0;
+		padding: rem(22px) 0;
 		display: flex;
 		align-items: center;
 		min-width: 0;
@@ -116,7 +133,7 @@
 
 			&:hover {
 				cursor:
-					url("../img/cursor_hover.png") 0 0,
+					url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
 					pointer;
 			}
 		}
@@ -139,7 +156,7 @@
 			background-color: $color-primary;
 			color: $color-white;
 			cursor:
-				url("../img/cursor_hover.png") 0 0,
+				url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
 				pointer;
 		}
 	}
@@ -164,9 +181,9 @@
 		visibility: hidden;
 		transform: translateY(-8px);
 		transition:
-			opacity 0.2s,
-			transform 0.2s,
-			visibility 0.2s;
+			opacity 0.15s,
+			transform 0.15s,
+			visibility 0.15s;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -192,6 +209,23 @@
 
 	&__button {
 		margin-right: rem(40px);
+	}
+
+	&__social-btn {
+		display: block;
+		overflow: hidden;
+		border-radius: rem(16px);
+		width: rem(40px);
+		height: rem(40px);
+		line-height: 0;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
 	}
 }
 
@@ -220,13 +254,15 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
+	height: 100dvh;
 	z-index: 99;
+	background-color: $color-mobile-bg;
 	pointer-events: none;
 	visibility: hidden;
 	opacity: 0;
 	transition:
-		opacity 0.2s,
-		visibility 0.2s;
+		opacity 0.15s,
+		visibility 0.15s;
 
 	&_open {
 		pointer-events: auto;
@@ -237,17 +273,21 @@
 	&__panel {
 		width: 100%;
 		height: 100%;
+		min-height: 0;
 		background-color: $color-mobile-bg;
 		border-radius: 0 0 rem(32px) rem(32px);
-		padding: rem(79px) 0 rem(16px) 0;
+		padding: 0 0 rem(16px) 0;
 		display: flex;
 		flex-direction: column;
 		gap: rem(24px);
-		overflow-y: auto;
+		overflow: hidden;
 	}
 
 	&__nav {
 		flex: 1;
+		min-height: 0;
+		overflow-y: auto;
+		margin-top: 80px;
 	}
 
 	&__list {
@@ -286,7 +326,7 @@
 		text-decoration: none;
 		cursor: pointer;
 		text-align: left;
-		transition: background-color 0.2s;
+		transition: background-color 0.15s;
 
 		&_trigger {
 			appearance: none;
@@ -299,7 +339,7 @@
 	}
 
 	&__arrow_trigger {
-		transition: transform 0.2s;
+		transition: transform 0.15s;
 	}
 
 	&__link_trigger[aria-expanded="true"] &__arrow_trigger {
@@ -317,7 +357,7 @@
 		text-align: center;
 		color: $color-black;
 		text-decoration: none;
-		transition: background-color 0.2s;
+		transition: background-color 0.15s;
 
 		&:hover {
 			background-color: $color-primary-lightest;
@@ -333,10 +373,27 @@
 		flex: 1 1 100%;
 	}
 
+	&__footer {
+		margin-top: auto;
+		flex-shrink: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		padding: 16px;
+		padding-top: 0;
+	}
+
 	&__social {
 		display: flex;
 		gap: rem(8px);
-		justify-content: flex-start;
+		justify-content: center;
+	}
+
+	&__cta {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__social-btn {
@@ -352,11 +409,6 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-
-	&__cta {
-		width: 100%;
-		justify-content: center;
 	}
 }
 

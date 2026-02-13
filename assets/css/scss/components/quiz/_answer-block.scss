@@ -1,0 +1,16 @@
+@use "../../variables" as *;
+@use "../../functions" as *;
+
+@mixin quiz-answer-block {
+	&__answer-block {
+		&[data-answer-type="select"].select {
+			max-width: 300px;
+		}
+
+		&:hover {
+			cursor:
+				url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
+				pointer;
+		}
+	}
+}

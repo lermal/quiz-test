@@ -17,12 +17,22 @@
 	border-bottom-left-radius: rem(32px);
 	border-bottom-right-radius: rem(32px);
 
+	@media screen and (max-width: $tablet-max) {
+		max-height: 479px;
+		background-image: url("../img/banner_phone_bg.png");
+	}
+
 	&__container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		gap: rem(32px);
+
+		@media screen and (max-width: $mobile-max) {
+			padding: rem(16px);
+			align-items: flex-start;
+		}
 	}
 
 	&__title {
@@ -30,6 +40,11 @@
 		font-size: rem(96px);
 		font-weight: 700;
 		text-align: center;
+
+		@media screen and (max-width: $mobile-max) {
+			font-size: rem(40px);
+			text-align: left;
+		}
 	}
 
 	&__description {
@@ -40,5 +55,11 @@
 
 		max-width: em(690px);
 		margin: 0 auto;
+
+		@media screen and (max-width: $mobile-max) {
+			font-size: rem(16px);
+			font-weight: 600;
+			text-align: left;
+		}
 	}
 }
