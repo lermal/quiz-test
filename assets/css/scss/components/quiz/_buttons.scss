@@ -1,0 +1,59 @@
+@use "../../variables" as *;
+@use "../../functions" as *;
+
+@mixin quiz-buttons {
+	&__cards-item_thank &__btn_next {
+		display: none;
+	}
+
+	&__btn {
+		padding: rem(12px) rem(32px);
+		border-radius: rem(16px);
+		font-family: $font-secondary;
+		font-size: rem(18px);
+		font-weight: 600;
+		cursor: pointer;
+		transition:
+			background-color 0.15s ease,
+			color 0.15s ease,
+			border-color 0.15s ease;
+
+		@media (max-width: $mobile-max) {
+			font-size: 16px;
+			padding: 8px 14px;
+		}
+
+		&_next {
+			background-color: $color-black;
+			color: $color-white;
+			border: 2px solid $color-black;
+
+			@media (max-width: $mobile-max) {
+				border-radius: 8px 8px 16px 8px;
+			}
+
+			&:hover {
+				background-color: $color-primary;
+				border-color: $color-primary;
+			}
+		}
+
+		&_back {
+			background-color: $color-white;
+			color: $color-black;
+			border: 2px solid $color-black;
+
+			@media (max-width: $mobile-max) {
+				border-radius: 8px 8px 8px 16px;
+			}
+
+			&:hover {
+				background-color: $color-grey-light;
+			}
+
+			&_hidden {
+				display: none;
+			}
+		}
+	}
+}

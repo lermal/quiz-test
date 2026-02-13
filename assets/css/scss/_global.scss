@@ -1,8 +1,29 @@
 @use "variables" as *;
 @use "functions" as *;
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: $color-primary-lightest;
+}
+
+#quiz,
+#reviews,
+#footer {
+	scroll-margin-top: rem(96px);
+}
+
+button:hover {
+	cursor:
+		url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
+		pointer;
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
 .title__hidden {
@@ -26,16 +47,501 @@ body {
 	color: $color-white;
 	font-family: $font-secondary;
 	font-size: rem(20px);
-	font-weight: 600;
+	font-weight: 500;
 	transition:
-		background-color 0.3s ease-in-out,
-		color 0.3s ease-in-out;
+		background-color 0.15s ease-in-out,
+		color 0.15s ease-in-out;
 
 	&:hover {
 		background-color: $color-primary;
 		color: $color-white;
 		cursor:
-			url("../img/cursor_hover.png") 0 0,
+			url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
 			pointer;
+	}
+
+	@media (max-width: $mobile-max) {
+		font-size: rem(16px);
+	}
+
+	&:has(img) {
+		overflow: hidden;
+		padding: 0;
+		line-height: 0;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			vertical-align: top;
+		}
+	}
+}
+
+input[type="text"]:focus-visible,
+textarea:focus-visible {
+	outline: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+textarea,
+input:not([type]) {
+	width: 100%;
+	max-width: 700px;
+	padding: rem(12px) 0;
+	border: none;
+	border-bottom: 2px solid $color-black;
+	border-radius: 0;
+	background: transparent;
+	font-family: $font-secondary;
+	font-size: rem(32px);
+	font-weight: 500;
+	box-sizing: border-box;
+
+	@media (max-width: $mobile-max) {
+		font-size: 24px;
+	}
+
+	&::placeholder {
+		color: $color-black;
+		opacity: 0.3;
+	}
+}
+
+.input-text-group {
+	position: relative;
+	width: 100%;
+	max-width: 700px;
+
+	.input-text-group__field-wrap {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: rem(8px);
+		padding: rem(12px) 0;
+		border-bottom: 2px solid $color-black;
+		box-sizing: border-box;
+
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="search"],
+		input:not([type]),
+		textarea {
+			flex: 1;
+			min-width: 0;
+			max-width: none;
+			padding: 0;
+			border: none;
+			border-radius: 0;
+			background: transparent;
+		}
+
+		textarea {
+			resize: none;
+		}
+	}
+
+	.input-text-group__file {
+		position: relative;
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		gap: rem(10px);
+		padding: rem(6px) rem(8px);
+		border: none;
+		border-radius: rem(8px);
+		background-color: $color-black;
+		color: $color-white;
+		font-family: $font-secondary;
+		font-size: rem(20px);
+		transition: background-color 0.15s ease;
+
+		&:hover {
+			background-color: $color-primary;
+			color: $color-white;
+			cursor:
+				url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
+				pointer;
+		}
+
+		input[type="file"] {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			cursor:
+				url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
+				pointer;
+		}
+
+		.input-text-group__file-text {
+			pointer-events: none;
+			max-width: 180px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+
+			&:hover {
+				cursor:
+					url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
+					pointer;
+			}
+		}
+
+		.input-text-group__file-icon {
+			width: 24px;
+			height: 24px;
+			flex-shrink: 0;
+			pointer-events: none;
+		}
+
+		.input-text-group__file-icon_done {
+			display: none;
+		}
+
+		&.has-file .input-text-group__file-icon_attach {
+			display: none;
+		}
+
+		&.has-file .input-text-group__file-icon_done {
+			display: block;
+		}
+
+		@media (max-width: $mobile-max) {
+			.input-text-group__file-text {
+				display: none;
+			}
+		}
+	}
+
+	.input-text-group__required {
+		flex-shrink: 0;
+		position: relative;
+		width: rem(36px);
+		height: rem(36px);
+		border-radius: rem(8px);
+		display: none;
+		align-items: center;
+		justify-content: center;
+		background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='36' height='36' rx='8' fill='%23FF004C'/%3E%3Cpath d='M18.0061 12.9V19.2M29 13.896V22.104C29 23.448 28.2735 24.696 27.0991 25.38L19.907 29.496C18.7325 30.168 17.2796 30.168 16.093 29.496L8.90094 25.38C8.32191 25.0473 7.84142 24.5694 7.50775 23.9943C7.17407 23.4193 6.99896 22.7674 7 22.104V13.896C7 12.552 7.72648 11.304 8.90094 10.62L16.093 6.504C17.2675 5.832 18.7204 5.832 19.907 6.504L27.0991 10.62C28.2735 11.304 29 12.54 29 13.896Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18 22.85V23' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		font-size: 0;
+		overflow: hidden;
+
+		&[data-tooltip]::before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			transform: translateX(-50%);
+			border: 6px solid transparent;
+			border-bottom-color: $color-accent;
+			border-top: none;
+		}
+
+		&[data-tooltip]::after {
+			content: attr(data-tooltip);
+			position: absolute;
+			left: 50%;
+			top: calc(100% + 8px);
+			transform: translateX(-50%);
+			padding: rem(6px) rem(12px);
+			border-radius: rem(8px);
+			background-color: $color-accent;
+			color: $color-white;
+			font-family: $font-secondary;
+			font-size: rem(14px);
+			white-space: nowrap;
+			z-index: 5;
+			pointer-events: none;
+		}
+	}
+
+	&.is-invalid .input-text-group__field-wrap {
+		border-bottom-color: $color-accent;
+
+		input::placeholder,
+		textarea::placeholder {
+			color: $color-accent;
+			opacity: 0.3;
+		}
+	}
+
+	&.is-invalid .input-text-group__required {
+		display: flex;
+	}
+}
+
+.select {
+	position: relative;
+	width: 100%;
+
+	.select__native {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		pointer-events: none;
+		width: 100%;
+		height: 100%;
+		appearance: none;
+	}
+
+	.select__wrap {
+		position: relative;
+		width: 100%;
+	}
+
+	.select__trigger {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		padding: rem(12px) rem(30px);
+		border: 2px solid $color-black;
+		border-radius: rem(12px);
+		background-color: $color-white;
+		font-family: $font-secondary;
+		font-size: rem(16px);
+		color: $color-black;
+		text-align: left;
+		box-sizing: border-box;
+		transition: border-color 0.15s ease;
+
+		&_open .select__arrow {
+			transform: rotate(90deg);
+		}
+	}
+
+	.select__value {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.select__arrow {
+		flex-shrink: 0;
+		width: 10px;
+		height: 18px;
+		transition: transform 0.15s ease;
+		transform: rotate(-90deg);
+	}
+
+	.select__list {
+		position: absolute;
+		left: 0;
+		top: calc(100% + 12px);
+		right: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		border: 2px solid $color-black;
+		border-radius: rem(10px);
+		background-color: $color-white;
+		z-index: 10;
+		max-height: 280px;
+		padding-bottom: 16px;
+		overflow-y: auto;
+	}
+
+	.select__option {
+		margin: 0;
+		padding: rem(12px) rem(30px);
+		padding-bottom: 0;
+		font-family: $font-secondary;
+		font-size: rem(16px);
+		font-weight: 400;
+		color: $color-black;
+		text-align: left;
+		transition: background-color 0.15s ease;
+
+		&::after {
+			content: "";
+			display: block;
+			height: 2px;
+			margin-top: rem(12px);
+			background-color: $color-black;
+		}
+
+		&:last-child::after {
+			display: none;
+		}
+
+		&:hover {
+			background-color: $color-primary-lightest;
+		}
+	}
+}
+
+.form-choices {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(10px);
+
+	&__item {
+		margin: 0;
+
+		label {
+			display: inline-flex;
+			align-items: center;
+			gap: rem(10px);
+			padding: rem(12px) rem(20px);
+			border-radius: rem(24px);
+			border: 2px solid $color-black;
+			background-color: $color-white;
+			color: $color-black;
+			font-family: $font-secondary;
+			font-size: rem(24px);
+			transition:
+				background-color 0.15s ease,
+				color 0.15s ease;
+
+			&:hover,
+			&:hover input {
+				cursor:
+					url("#{$cursor-hover-url}") #{$cursor-hover-x} #{$cursor-hover-y},
+					pointer;
+			}
+
+			@media (max-width: $mobile-max) {
+				font-size: 16px;
+			}
+
+			input {
+				accent-color: $color-black;
+			}
+
+			&:has(input:checked) {
+				background-color: $color-black;
+				color: $color-white;
+				border-color: $color-black;
+			}
+		}
+
+		&:has(input:checked) label {
+			background-color: $color-black;
+			color: $color-white;
+			border-color: $color-black;
+		}
+	}
+}
+
+.form-choices_type_checkbox .form-choices__item label {
+	position: relative;
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease;
+
+	&:hover:not(:has(input:checked)) {
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: $color-white;
+	}
+
+	input {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		appearance: none;
+		accent-color: unset;
+	}
+
+	&:has(input:checked)::before {
+		content: "";
+		display: block;
+		width: 22px;
+		height: 22px;
+		flex-shrink: 0;
+		border-radius: 50%;
+		background-color: $color-white;
+		background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L11 1M11 11L1 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+		background-size: 10px 10px;
+		background-repeat: no-repeat;
+		background-position: center;
+		transition: background-color 0.15s ease;
+
+		@media (max-width: $mobile-max) {
+			width: 17px;
+			height: 17px;
+			background-size: 8px 8px;
+		}
+	}
+
+	&:has(input:checked):hover::before {
+		background-color: $color-primary;
+		background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 11L11 1M11 11L1 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	}
+}
+
+.form-choices_type_radio .form-choices__item label {
+	position: relative;
+	transition:
+		background-color 0.15s ease,
+		border-color 0.15s ease,
+		color 0.15s ease;
+
+	&:hover:not(:has(input:checked)) {
+		background-color: $color-primary;
+		border-color: $color-primary;
+		color: $color-white;
+	}
+
+	input {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		appearance: none;
+		accent-color: unset;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		width: 24px;
+		height: 24px;
+		flex-shrink: 0;
+		border-radius: 50%;
+		background-color: transparent;
+		border: 4px solid $color-black;
+		transition:
+			background-color 0.15s ease,
+			border-color 0.15s ease;
+
+		@media (max-width: $mobile-max) {
+			width: 17px;
+			height: 17px;
+			border-width: 3px;
+		}
+	}
+
+	&:hover:not(:has(input:checked))::before {
+		background-color: $color-white;
+		border-color: $color-white;
+	}
+
+	&:has(input:checked)::before {
+		background-color: $color-black;
+		border-color: $color-white;
+	}
+
+	&:has(input:checked):hover::before {
+		background-color: $color-primary;
+		border-color: $color-white;
 	}
 }

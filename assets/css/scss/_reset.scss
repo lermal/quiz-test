@@ -139,3 +139,6 @@ button {
 	background-color: transparent;
 	cursor: pointer;
 }
+input:focus-visible {
+	outline: none;
+}
