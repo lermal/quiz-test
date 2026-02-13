@@ -1760,6 +1760,17 @@ input:not([type])::placeholder {
 .footer__icon-link:hover {
   opacity: 0.9;
 }
+@media (max-width: 1100px) {
+  .footer__icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  .footer__icon-link {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 .footer__brand {
   color: #ffffff;
   font-family: "PP Neue Machina", sans-serif;
