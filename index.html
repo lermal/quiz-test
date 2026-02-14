@@ -1,15 +1,34 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 	<!-- HEAD START -->
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="keywords" content="Super Quiz, квиз, супер-квиз, пройти квиз" />
+		<meta name="title" content="Super Quiz" />
+		<meta
+			name="description"
+			content="Super Quiz — пройди супер-квиз и узнай результат." />
 		<title>Super Quiz</title>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="assets/css/style.css" />
+		<link
+			rel="preload"
+			href="assets/img/banner_phone_bg.png"
+			as="image"
+			media="(max-width: 500px)" />
 	</head>
 	<!-- HEAD END -->
 	<!-- BODY START -->
 	<body>
+		<div
+			class="page-loader"
+			id="page-loader"
+			aria-hidden="false"
+			aria-live="polite">
+			<div class="page-loader__spinner" aria-hidden="true"></div>
+			<span class="page-loader__text">Загрузка...</span>
+		</div>
 		<!-- HEADER START -->
 		<header class="header" id="header">
 			<!-- HEADER_CONTAINER START -->
@@ -98,25 +117,38 @@
 						Связаться с нами
 					</button>
 					<a class="navbar__social-btn" href="https://tiktok.com/">
-						<img
-							src="assets/img/tiktok_small.png"
-							alt="TikTok"
-							width="40"
-							height="40" />
+						<picture
+							><source
+								type="image/webp"
+								srcset="assets/img/tiktok_small.webp" />
+							<img
+								src="assets/img/tiktok_small.png"
+								alt="TikTok"
+								width="40"
+								height="40"
+						/></picture>
 					</a>
 					<a class="navbar__social-btn" href="https://vk.com/">
-						<img
-							src="assets/img/vk_small.png"
-							alt="VK"
-							width="40"
-							height="40" />
+						<picture
+							><source type="image/webp" srcset="assets/img/vk_small.webp" />
+							<img
+								src="assets/img/vk_small.png"
+								alt="VK"
+								width="40"
+								height="40"
+						/></picture>
 					</a>
 					<a class="navbar__social-btn" href="https://telegram.com/">
-						<img
-							src="assets/img/telegram_small.png"
-							alt="Telegram"
-							width="40"
-							height="40" />
+						<picture
+							><source
+								type="image/webp"
+								srcset="assets/img/telegram_small.webp" />
+							<img
+								src="assets/img/telegram_small.png"
+								alt="Telegram"
+								width="40"
+								height="40"
+						/></picture>
 					</a>
 				</div>
 				<!-- NAVBAR END -->
@@ -222,25 +254,38 @@
 				<div class="mobile-menu__footer">
 					<div class="mobile-menu__social">
 						<a class="mobile-menu__social-btn" href="https://tiktok.com/">
-							<img
-								src="assets/img/tiktok_small.png"
-								alt="TikTok"
-								width="40"
-								height="40" />
+							<picture
+								><source
+									type="image/webp"
+									srcset="assets/img/tiktok_small.webp" />
+								<img
+									src="assets/img/tiktok_small.png"
+									alt="TikTok"
+									width="40"
+									height="40"
+							/></picture>
 						</a>
 						<a class="mobile-menu__social-btn" href="https://vk.com/">
-							<img
-								src="assets/img/vk_small.png"
-								alt="VK"
-								width="40"
-								height="40" />
+							<picture
+								><source type="image/webp" srcset="assets/img/vk_small.webp" />
+								<img
+									src="assets/img/vk_small.png"
+									alt="VK"
+									width="40"
+									height="40"
+							/></picture>
 						</a>
 						<a class="mobile-menu__social-btn" href="https://telegram.com/">
-							<img
-								src="assets/img/telegram_small.png"
-								alt="Telegram"
-								width="40"
-								height="40" />
+							<picture
+								><source
+									type="image/webp"
+									srcset="assets/img/telegram_small.webp" />
+								<img
+									src="assets/img/telegram_small.png"
+									alt="Telegram"
+									width="40"
+									height="40"
+							/></picture>
 						</a>
 					</div>
 					<button
@@ -252,530 +297,569 @@
 				</div>
 			</div>
 		</div>
-		<!-- BANNER START -->
-		<section class="banner" id="banner" aria-labelledby="banner-heading">
-			<!-- BANNER_CONTAINER START -->
-			<div class="banner__container">
-				<h1 id="banner-heading" class="banner__title">Это Супер-квиз!</h1>
-				<p class="banner__description">
-					Пройди квиз, и будешь счастлив. Этот квиз предназначен для тех людей,
-					которые любят проходить тесты!
-				</p>
-				<a href="#quiz" class="btn banner__button">Пройти супер-квиз</a>
-			</div>
-			<!-- BANNER_CONTAINER END -->
-		</section>
-		<!-- BANNER END -->
-		<!-- REACTIONS START -->
-		<section
-			class="reactions"
-			id="reactions"
-			aria-labelledby="reactions-heading">
-			<h2 id="reactions-heading" class="reactions__title title__hidden">
-				Реакции
-			</h2>
-			<div class="reactions__container">
-				<div class="embla reactions__embla">
-					<div class="embla__viewport" id="reactions-embla">
-						<ul class="reactions__list embla__container">
-							<li class="reactions__item embla__slide">
-								<span class="reactions__item_icon">😋</span> Восхитительно
-							</li>
-							<li class="reactions__item embla__slide">
-								<span class="reactions__item_icon">😎</span> Лучше не бывает
-							</li>
-							<li class="reactions__item embla__slide">
-								<span class="reactions__item_icon">😍</span> Где найти еще?
-							</li>
-							<li class="reactions__item embla__slide">
-								<span class="reactions__item_icon">🤩</span> В натуре четко!
-							</li>
-							<li class="reactions__item embla__slide">
-								<span class="reactions__item_icon">😍</span> Круто
-							</li>
-						</ul>
+		<main>
+			<!-- BANNER START -->
+			<section class="banner" id="banner" aria-labelledby="banner-heading">
+				<!-- BANNER_CONTAINER START -->
+				<div class="banner__container">
+					<h1 id="banner-heading" class="banner__title">Это Супер-квиз!</h1>
+					<p class="banner__description">
+						Пройди квиз — и будешь счастлив. Один квиз, несколько вопросов,
+						понятный результат.
+					</p>
+					<a href="#quiz" class="btn banner__button">Пройти супер-квиз</a>
+				</div>
+				<!-- BANNER_CONTAINER END -->
+			</section>
+			<!-- BANNER END -->
+			<!-- REACTIONS START -->
+			<section
+				class="reactions"
+				id="reactions"
+				aria-labelledby="reactions-heading">
+				<h2 id="reactions-heading" class="reactions__title title__hidden">
+					Реакции
+				</h2>
+				<div class="reactions__container">
+					<div class="embla reactions__embla">
+						<div class="embla__viewport" id="reactions-embla">
+							<ul class="reactions__list embla__container">
+								<li class="reactions__item embla__slide">
+									<span class="reactions__item_icon">😋</span> Восхитительно
+								</li>
+								<li class="reactions__item embla__slide">
+									<span class="reactions__item_icon">😎</span> Лучше не бывает
+								</li>
+								<li class="reactions__item embla__slide">
+									<span class="reactions__item_icon">😍</span> Где найти еще?
+								</li>
+								<li class="reactions__item embla__slide">
+									<span class="reactions__item_icon">🤩</span> В натуре четко!
+								</li>
+								<li class="reactions__item embla__slide">
+									<span class="reactions__item_icon">😍</span> Круто
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<!-- REACTIONS END -->
-		<!-- QUIZ START -->
-		<section class="quiz" id="quiz" aria-labelledby="quiz-heading">
-			<h2 id="quiz-heading" class="quiz__title title__hidden">Квиз</h2>
-			<!-- QUIZ_CONTAINER START -->
-			<div class="container quiz__container">
-				<!-- QUIZ_QUESTIONS START -->
-				<ul class="quiz__questions">
-					<!-- QUIZ_QUESTIONS_ITEM START -->
-					<li class="quiz__questions-item" data-question-id="1">
-						<div class="quiz__questions-item_title">
-							Какие виды тестов вам нравятся?
-						</div>
-						<p class="quiz__questions-item_answer"></p>
-					</li>
-					<!-- QUIZ_QUESTIONS_ITEM END -->
-					<!-- QUIZ_QUESTIONS_ITEM START -->
-					<li class="quiz__questions-item" data-question-id="2">
-						<div class="quiz__questions-item_title">
-							Вы любите проходить тесты?
-						</div>
-						<p class="quiz__questions-item_answer"></p>
-					</li>
-					<!-- QUIZ_QUESTIONS_ITEM END -->
-					<!-- QUIZ_QUESTIONS_ITEM START -->
-					<li class="quiz__questions-item" data-question-id="3">
-						<div class="quiz__questions-item_title">
-							Спасибо за ответы! Заполните форму ниже
-						</div>
-						<p class="quiz__questions-item_answer"></p>
-					</li>
-					<!-- QUIZ_QUESTIONS_ITEM END -->
-				</ul>
-				<!-- QUIZ_QUESTIONS END -->
-				<!-- QUIZ_CARDS START -->
-				<div class="quiz__cards">
-					<!-- QUIZ_CARDS_ITEM CARD 1 START -->
-					<div class="quiz__cards-item" data-card-id="1">
-						<h3 class="quiz__cards-item_title">
-							Какие виды тестов вам нравятся?
-						</h3>
-						<p class="quiz__cards-item_description">
-							Многие из нас хоть раз попадались на эту удочку — хочешь пройти
-							всего один тест из интернета, и вдруг понимаешь, что пролетело
-							полдня.
-						</p>
-						<!-- QUIZ_CARDS_ITEM_ANSWERS START -->
-						<div class="quiz__cards-item_answers">
-							<!-- ANSWER_BLOCK CHECKBOX START -->
-							<div
-								class="quiz__answer-block"
-								data-answer-type="checkbox"
-								data-name="q1">
-								<ul
-									class="quiz__answer-block_list form-choices form-choices_type_checkbox">
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="checkbox" name="q1" value="temperament" />На
-											темперамент</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="checkbox" name="q1" value="marvel" />Кто я
-											из вселенной Марвел</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="checkbox" name="q1" value="spotted" />Увидел
-											это</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input
-												type="checkbox"
-												name="q1"
-												value="totem_animal" />Мое тотемное животное</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="checkbox" name="q1" value="iq" />На
-											IQ</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="checkbox" name="q1" value="vocabulary" />На
-											словарный запас</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="checkbox" name="q1" value="logic" />На
-											логическое мышление</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input
-												type="checkbox"
-												name="q1"
-												value="intelligence" />На уровень интеллекта</label
-										>
-									</li>
-								</ul>
+			</section>
+			<!-- REACTIONS END -->
+			<!-- QUIZ START -->
+			<section class="quiz" id="quiz" aria-labelledby="quiz-heading">
+				<h2 id="quiz-heading" class="quiz__title title__hidden">Квиз</h2>
+				<!-- QUIZ_CONTAINER START -->
+				<div class="container quiz__container">
+					<!-- QUIZ_QUESTIONS START -->
+					<ul class="quiz__questions">
+						<!-- QUIZ_QUESTIONS_ITEM START -->
+						<li class="quiz__questions-item" data-question-id="1">
+							<div class="quiz__questions-item_title">
+								Какие виды тестов вам нравятся?
 							</div>
-							<!-- ANSWER_BLOCK CHECKBOX END -->
-						</div>
-						<!-- QUIZ_CARDS_ITEM_ANSWERS END -->
-						<div class="quiz__cards-item_actions">
-							<button type="button" class="quiz__btn quiz__btn_back">
-								Назад
-							</button>
-							<button type="button" class="quiz__btn quiz__btn_next">
-								Продолжить
-							</button>
-						</div>
-					</div>
-					<!-- QUIZ_CARDS_ITEM CARD 1 END -->
-					<!-- QUIZ_CARDS_ITEM CARD 2 START -->
-					<div class="quiz__cards-item" data-card-id="2">
-						<h3 class="quiz__cards-item_title">Вы любите проходить тесты?</h3>
-						<p class="quiz__cards-item_description">
-							Нам важно узнать насколько часто Вы проходите тесты.
-						</p>
-						<!-- QUIZ_CARDS_ITEM_ANSWERS START -->
-						<div class="quiz__cards-item_answers">
-							<!-- ANSWER_BLOCK RADIO START -->
-							<div
-								class="quiz__answer-block"
-								data-answer-type="radio"
-								data-name="q2">
-								<ul
-									class="quiz__answer-block_list form-choices form-choices_type_radio">
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="radio" name="q2" value="never" />Нет, я
-											никогда не прохожу тесты</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="radio" name="q2" value="always" />Да, я
-											прохожу все тесты</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input
-												type="radio"
-												name="q2"
-												value="force_myself" />Заставляю себя проходить
-											тесты</label
-										>
-									</li>
-									<li class="quiz__answer-block_item form-choices__item">
-										<label
-											><input type="radio" name="q2" value="sometimes" />Не
-											люблю проходить тесты, но иногда приходится</label
-										>
-									</li>
-								</ul>
+							<p class="quiz__questions-item_answer"></p>
+						</li>
+						<!-- QUIZ_QUESTIONS_ITEM END -->
+						<!-- QUIZ_QUESTIONS_ITEM START -->
+						<li class="quiz__questions-item" data-question-id="2">
+							<div class="quiz__questions-item_title">
+								Вы любите проходить тесты?
 							</div>
-							<!-- ANSWER_BLOCK RADIO END -->
-						</div>
-						<!-- QUIZ_CARDS_ITEM_ANSWERS END -->
-						<div class="quiz__cards-item_actions">
-							<button type="button" class="quiz__btn quiz__btn_back">
-								Назад
-							</button>
-							<button type="button" class="quiz__btn quiz__btn_next">
-								Продолжить
-							</button>
-						</div>
-					</div>
-					<!-- QUIZ_CARDS_ITEM CARD 2 END -->
-					<!-- QUIZ_CARDS_ITEM CARD 3 START -->
-					<div class="quiz__cards-item" data-card-id="3">
-						<span class="quiz__cards-item_subtitle">😉👍</span>
-						<h3 class="quiz__cards-item_title">
-							Спасибо за ответы!<br />
-							Заполните форму ниже
-						</h3>
-						<p class="quiz__cards-item_description">
-							Ваше мнение важно для нас. Прикрепите фото с Вашей любимой
-							картинкой и оставьте комментарий насколько понравился Вам тест.
-						</p>
-						<!-- QUIZ_CARDS_ITEM_ANSWERS START -->
-						<div class="quiz__cards-item_answers">
-							<!-- ANSWER_BLOCK TEXT START -->
-							<div
-								class="quiz__answer-block"
-								data-answer-type="text"
-								data-name="q3_comment">
-								<div class="input-text-group" id="q3-comment-group">
-									<div class="input-text-group__field-wrap">
-										<input
-											type="text"
-											id="q3-comment"
-											name="q3_comment"
-											placeholder="Ваш комментарий"
-											required
-											aria-describedby="q3-comment-required" />
-										<label
-											class="input-text-group__file"
-											for="q3-comment-file"
-											title="Прикрепить файл">
-											<input
-												type="file"
-												id="q3-comment-file"
-												name="q3_comment_file"
-												accept="image/*" />
-											<span
-												class="input-text-group__file-text"
-												data-default="Приложить файлы"
-												>Приложить файлы</span
+							<p class="quiz__questions-item_answer"></p>
+						</li>
+						<!-- QUIZ_QUESTIONS_ITEM END -->
+						<!-- QUIZ_QUESTIONS_ITEM START -->
+						<li class="quiz__questions-item" data-question-id="3">
+							<div class="quiz__questions-item_title">
+								Спасибо за ответы! Заполните форму ниже
+							</div>
+							<p class="quiz__questions-item_answer"></p>
+						</li>
+						<!-- QUIZ_QUESTIONS_ITEM END -->
+					</ul>
+					<!-- QUIZ_QUESTIONS END -->
+					<!-- QUIZ_CARDS START -->
+					<div class="quiz__cards">
+						<!-- QUIZ_CARDS_ITEM CARD 1 START -->
+						<div class="quiz__cards-item" data-card-id="1">
+							<h3 class="quiz__cards-item_title">
+								Какие виды тестов вам нравятся?
+							</h3>
+							<p class="quiz__cards-item_description">
+								Многие из нас хоть раз попадались на эту удочку — хочешь пройти
+								всего один тест из интернета, и вдруг понимаешь, что пролетело
+								полдня.
+							</p>
+							<!-- QUIZ_CARDS_ITEM_ANSWERS START -->
+							<div class="quiz__cards-item_answers">
+								<!-- ANSWER_BLOCK CHECKBOX START -->
+								<div
+									class="quiz__answer-block"
+									data-answer-type="checkbox"
+									data-name="q1">
+									<ul
+										class="quiz__answer-block_list form-choices form-choices_type_checkbox">
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input
+													type="checkbox"
+													name="q1"
+													value="temperament" />На темперамент</label
 											>
-											<svg
-												width="24"
-												height="24"
-												viewBox="0 0 24 24"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg">
-												<path
-													d="M12.33 12.15L9.85999 14.62C9.53435 14.9447 9.27599 15.3305 9.0997 15.7552C8.92341 16.1799 8.83266 16.6352 8.83266 17.095C8.83266 17.5549 8.92341 18.0102 9.0997 18.4349C9.27599 18.8596 9.53435 19.2454 9.85999 19.57C10.1847 19.8957 10.5704 20.154 10.9951 20.3303C11.4198 20.5066 11.8752 20.5974 12.335 20.5974C12.7948 20.5974 13.2502 20.5066 13.6749 20.3303C14.0996 20.154 14.4853 19.8957 14.81 19.57L18.7 15.68C20.0112 14.3663 20.7476 12.5861 20.7476 10.73C20.7476 8.87396 20.0112 7.09372 18.7 5.78003C17.3863 4.46884 15.6061 3.73242 13.75 3.73242C11.8939 3.73242 10.1137 4.46884 8.79999 5.78003L4.55999 10.02C2.21999 12.36 2.21999 16.16 4.55999 18.51"
-													stroke="white"
-													stroke-width="1.5"
-													stroke-linecap="round"
-													stroke-linejoin="round" />
-											</svg>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input type="checkbox" name="q1" value="marvel" />Кто я
+												из вселенной Марвел</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input
+													type="checkbox"
+													name="q1"
+													value="spotted" />Увидел это</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input
+													type="checkbox"
+													name="q1"
+													value="totem_animal" />Мое тотемное животное</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input type="checkbox" name="q1" value="iq" />На
+												IQ</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input
+													type="checkbox"
+													name="q1"
+													value="vocabulary" />На словарный запас</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input type="checkbox" name="q1" value="logic" />На
+												логическое мышление</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input
+													type="checkbox"
+													name="q1"
+													value="intelligence" />На уровень интеллекта</label
+											>
+										</li>
+									</ul>
+								</div>
+								<!-- ANSWER_BLOCK CHECKBOX END -->
+							</div>
+							<!-- QUIZ_CARDS_ITEM_ANSWERS END -->
+							<div class="quiz__cards-item_actions">
+								<button type="button" class="quiz__btn quiz__btn_back">
+									Назад
+								</button>
+								<button type="button" class="quiz__btn quiz__btn_next">
+									Продолжить
+								</button>
+							</div>
+						</div>
+						<!-- QUIZ_CARDS_ITEM CARD 1 END -->
+						<!-- QUIZ_CARDS_ITEM CARD 2 START -->
+						<div class="quiz__cards-item" data-card-id="2">
+							<h3 class="quiz__cards-item_title">Вы любите проходить тесты?</h3>
+							<p class="quiz__cards-item_description">
+								Нам важно узнать насколько часто Вы проходите тесты.
+							</p>
+							<!-- QUIZ_CARDS_ITEM_ANSWERS START -->
+							<div class="quiz__cards-item_answers">
+								<!-- ANSWER_BLOCK RADIO START -->
+								<div
+									class="quiz__answer-block"
+									data-answer-type="radio"
+									data-name="q2">
+									<ul
+										class="quiz__answer-block_list form-choices form-choices_type_radio">
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input type="radio" name="q2" value="never" />Нет, я
+												никогда не прохожу тесты</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input type="radio" name="q2" value="always" />Да, я
+												прохожу все тесты</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input
+													type="radio"
+													name="q2"
+													value="force_myself" />Заставляю себя проходить
+												тесты</label
+											>
+										</li>
+										<li class="quiz__answer-block_item form-choices__item">
+											<label
+												><input type="radio" name="q2" value="sometimes" />Не
+												люблю проходить тесты, но иногда приходится</label
+											>
+										</li>
+									</ul>
+								</div>
+								<!-- ANSWER_BLOCK RADIO END -->
+							</div>
+							<!-- QUIZ_CARDS_ITEM_ANSWERS END -->
+							<div class="quiz__cards-item_actions">
+								<button type="button" class="quiz__btn quiz__btn_back">
+									Назад
+								</button>
+								<button type="button" class="quiz__btn quiz__btn_next">
+									Продолжить
+								</button>
+							</div>
+						</div>
+						<!-- QUIZ_CARDS_ITEM CARD 2 END -->
+						<!-- QUIZ_CARDS_ITEM CARD 3 START -->
+						<div class="quiz__cards-item" data-card-id="3">
+							<span class="quiz__cards-item_subtitle">😉👍</span>
+							<h3 class="quiz__cards-item_title">
+								Спасибо за ответы!<br />
+								Заполните форму ниже
+							</h3>
+							<p class="quiz__cards-item_description">
+								Ваше мнение важно для нас. Прикрепите фото с Вашей любимой
+								картинкой и оставьте комментарий насколько понравился Вам тест.
+							</p>
+							<!-- QUIZ_CARDS_ITEM_ANSWERS START -->
+							<div class="quiz__cards-item_answers">
+								<!-- ANSWER_BLOCK TEXT START -->
+								<div
+									class="quiz__answer-block"
+									data-answer-type="text"
+									data-name="q3_comment">
+									<div class="input-text-group" id="q3-comment-group">
+										<div class="input-text-group__field-wrap">
+											<input
+												type="text"
+												id="q3-comment"
+												name="q3_comment"
+												placeholder="Ваш комментарий"
+												required
+												aria-describedby="q3-comment-required" />
+											<label
+												class="input-text-group__file"
+												for="q3-comment-file"
+												title="Прикрепить файл">
+												<input
+													type="file"
+													id="q3-comment-file"
+													name="q3_comment_file"
+													accept="image/*" />
+												<span
+													class="input-text-group__file-text"
+													data-default="Приложить файлы"
+													>Приложить файлы</span
+												>
+												<svg
+													width="24"
+													height="24"
+													viewBox="0 0 24 24"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M12.33 12.15L9.85999 14.62C9.53435 14.9447 9.27599 15.3305 9.0997 15.7552C8.92341 16.1799 8.83266 16.6352 8.83266 17.095C8.83266 17.5549 8.92341 18.0102 9.0997 18.4349C9.27599 18.8596 9.53435 19.2454 9.85999 19.57C10.1847 19.8957 10.5704 20.154 10.9951 20.3303C11.4198 20.5066 11.8752 20.5974 12.335 20.5974C12.7948 20.5974 13.2502 20.5066 13.6749 20.3303C14.0996 20.154 14.4853 19.8957 14.81 19.57L18.7 15.68C20.0112 14.3663 20.7476 12.5861 20.7476 10.73C20.7476 8.87396 20.0112 7.09372 18.7 5.78003C17.3863 4.46884 15.6061 3.73242 13.75 3.73242C11.8939 3.73242 10.1137 4.46884 8.79999 5.78003L4.55999 10.02C2.21999 12.36 2.21999 16.16 4.55999 18.51"
+														stroke="white"
+														stroke-width="1.5"
+														stroke-linecap="round"
+														stroke-linejoin="round" />
+												</svg>
 
-											<svg
-												class="input-text-group__file-icon input-text-group__file-icon_done"
-												width="24"
-												height="24"
-												viewBox="0 0 24 24"
-												fill="none"
-												xmlns="http://www.w3.org/2000/svg"
-												aria-hidden="true">
-												<path
-													d="M5 12l5 5L20 7"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round" />
-											</svg>
-										</label>
-										<span
-											class="input-text-group__required"
-											id="q3-comment-required"
-											role="alert"
-											aria-hidden="true"
-											data-tooltip="Это обязательное поле"
-											>!</span
-										>
+												<svg
+													class="input-text-group__file-icon input-text-group__file-icon_done"
+													width="24"
+													height="24"
+													viewBox="0 0 24 24"
+													fill="none"
+													xmlns="http://www.w3.org/2000/svg"
+													aria-hidden="true">
+													<path
+														d="M5 12l5 5L20 7"
+														stroke="currentColor"
+														stroke-width="2"
+														stroke-linecap="round"
+														stroke-linejoin="round" />
+												</svg>
+											</label>
+											<span
+												class="input-text-group__required"
+												id="q3-comment-required"
+												role="alert"
+												aria-hidden="true"
+												data-tooltip="Это обязательное поле"
+												>!</span
+											>
+										</div>
 									</div>
 								</div>
+								<!-- ANSWER_BLOCK TEXT END -->
+								<!-- ANSWER_BLOCK SELECT START -->
+								<div
+									class="quiz__answer-block select"
+									data-answer-type="select"
+									data-name="q3_rating">
+									<select id="q3-rating" name="q3_rating">
+										<option value="Очень понравился">Очень понравился</option>
+										<option value="Не понравился">Не понравился</option>
+										<option value="Пройду ещё раз">Пройду ещё раз</option>
+										<option value="Посоветую пройти всем">
+											Посоветую пройти всем
+										</option>
+									</select>
+								</div>
+								<!-- ANSWER_BLOCK SELECT END -->
 							</div>
-							<!-- ANSWER_BLOCK TEXT END -->
-							<!-- ANSWER_BLOCK SELECT START -->
-							<div
-								class="quiz__answer-block select"
-								data-answer-type="select"
-								data-name="q3_rating">
-								<select id="q3-rating" name="q3_rating">
-									<option value="Очень понравился">Очень понравился</option>
-									<option value="Не понравился">Не понравился</option>
-									<option value="Пройду ещё раз">Пройду ещё раз</option>
-									<option value="Посоветую пройти всем">
-										Посоветую пройти всем
-									</option>
-								</select>
+							<!-- QUIZ_CARDS_ITEM_ANSWERS END -->
+							<div class="quiz__cards-item_actions">
+								<button type="button" class="quiz__btn quiz__btn_back">
+									Назад
+								</button>
+								<button type="button" class="quiz__btn quiz__btn_next">
+									Продолжить
+								</button>
 							</div>
-							<!-- ANSWER_BLOCK SELECT END -->
 						</div>
-						<!-- QUIZ_CARDS_ITEM_ANSWERS END -->
-						<div class="quiz__cards-item_actions">
-							<button type="button" class="quiz__btn quiz__btn_back">
-								Назад
-							</button>
-							<button type="button" class="quiz__btn quiz__btn_next">
-								Продолжить
-							</button>
+						<!-- QUIZ_CARDS_ITEM CARD 3 END -->
+						<!-- QUIZ_CARDS_ITEM CARD 4 THANK YOU START -->
+						<div
+							class="quiz__cards-item quiz__cards-item_thank"
+							data-card-id="4">
+							<h3 class="quiz__cards-item_title">Спасибо за ответы!</h3>
+							<p class="quiz__cards-item_description">
+								Ваши ответы сохранены. Мы рады, что вы прошли наш квиз.
+							</p>
 						</div>
+						<!-- QUIZ_CARDS_ITEM CARD 4 THANK YOU END -->
 					</div>
-					<!-- QUIZ_CARDS_ITEM CARD 3 END -->
-					<!-- QUIZ_CARDS_ITEM CARD 4 THANK YOU START -->
-					<div class="quiz__cards-item quiz__cards-item_thank" data-card-id="4">
-						<h3 class="quiz__cards-item_title">Спасибо за ответы!</h3>
-						<p class="quiz__cards-item_description">
-							Ваши ответы сохранены. Мы рады, что вы прошли наш квиз.
-						</p>
-					</div>
-					<!-- QUIZ_CARDS_ITEM CARD 4 THANK YOU END -->
+					<!-- QUIZ_CARDS END -->
 				</div>
-				<!-- QUIZ_CARDS END -->
-			</div>
-			<!-- QUIZ_CONTAINER END -->
-		</section>
-		<!-- QUIZ END -->
-		<!-- REVIEWS START -->
-		<section class="reviews" id="reviews" aria-labelledby="reviews-heading">
-			<h2 id="reviews-heading" class="reviews__title title__hidden">Отзывы</h2>
-			<!-- REVIEWS_CONTAINER START -->
-			<div class="container reviews__container">
-				<div class="embla">
-					<div class="embla__viewport" id="reviews-embla">
-						<div class="embla__container">
-							<div class="embla__slide">
-								<div
-									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_1_bg.png);
-									">
-									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar1.png"
-											alt="Тимур Никитенко"
-											width="80"
-											height="80" />
-										<div class="reviews__item-content_name">
-											Тимур Никитенко
+				<!-- QUIZ_CONTAINER END -->
+			</section>
+			<!-- QUIZ END -->
+			<!-- REVIEWS START -->
+			<section class="reviews" id="reviews" aria-labelledby="reviews-heading">
+				<h2 id="reviews-heading" class="reviews__title title__hidden">
+					Отзывы
+				</h2>
+				<!-- REVIEWS_CONTAINER START -->
+				<div class="container reviews__container">
+					<div class="embla">
+						<div class="embla__viewport" id="reviews-embla">
+							<div class="embla__container">
+								<article class="embla__slide">
+									<h3 class="title__hidden">Отзыв Тимура Никитенко</h3>
+									<div
+										class="reviews__item"
+										data-bg="assets/img/reviews/review_1_bg.png">
+										<div class="reviews__item-content">
+											<picture
+												><source
+													type="image/webp"
+													srcset="assets/img/reviews/avatar1.webp" />
+												<img
+													class="reviews__item-content_avatar"
+													src="assets/img/reviews/avatar1.png"
+													alt="Тимур Никитенко"
+													width="80"
+													height="80"
+													loading="lazy"
+											/></picture>
+											<cite class="reviews__item-content_name"
+												>Тимур Никитенко</cite
+											>
+											<p class="reviews__item-content_description">
+												Мне очень понравился тест.
+											</p>
 										</div>
-										<p class="reviews__item-content_description">
-											Мне очень понравился тест.
-										</p>
 									</div>
-								</div>
-							</div>
-							<div class="embla__slide">
-								<div
-									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_1_bg.png);
-									">
-									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar1.png"
-											alt="Андрей Пархимович"
-											width="80"
-											height="80" />
-										<div class="reviews__item-content_name">
-											Андрей Пархимович
+								</article>
+								<article class="embla__slide">
+									<h3 class="title__hidden">Отзыв Андрея Пархимовича</h3>
+									<div
+										class="reviews__item"
+										data-bg="assets/img/reviews/review_1_bg.png">
+										<div class="reviews__item-content">
+											<picture
+												><source
+													type="image/webp"
+													srcset="assets/img/reviews/avatar1.webp" />
+												<img
+													class="reviews__item-content_avatar"
+													src="assets/img/reviews/avatar1.png"
+													alt="Андрей Пархимович"
+													width="80"
+													height="80"
+													loading="lazy"
+											/></picture>
+											<cite class="reviews__item-content_name"
+												>Андрей Пархимович</cite
+											>
+											<p class="reviews__item-content_description">
+												В целом, конечно, постоянное
+												информационно-пропагандистское обеспечение нашей
+												деятельности влечет за собой процесс внедрения и
+												модернизации направлений прогрессивного развития.
+											</p>
 										</div>
-										<p class="reviews__item-content_description">
-											В целом, конечно, постоянное
-											информационно-пропагандистское обеспечение нашей
-											деятельности влечет за собой процесс внедрения и
-											модернизации направлений прогрессивного развития.
-										</p>
 									</div>
-								</div>
-							</div>
-							<div class="embla__slide">
-								<div
-									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_2_bg.png);
-									">
-									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar2.png"
-											alt="Тимур Никитенко"
-											width="80"
-											height="80" />
-										<div class="reviews__item-content_name">
-											Тимур Никитенко
+								</article>
+								<article class="embla__slide">
+									<h3 class="title__hidden">Отзыв Тимура Никитенко</h3>
+									<div
+										class="reviews__item"
+										data-bg="assets/img/reviews/review_2_bg.png">
+										<div class="reviews__item-content">
+											<picture
+												><source
+													type="image/webp"
+													srcset="assets/img/reviews/avatar2.webp" />
+												<img
+													class="reviews__item-content_avatar"
+													src="assets/img/reviews/avatar2.png"
+													alt="Тимур Никитенко"
+													width="80"
+													height="80"
+													loading="lazy"
+											/></picture>
+											<cite class="reviews__item-content_name"
+												>Тимур Никитенко</cite
+											>
+											<p class="reviews__item-content_description">
+												Господа, глубокий уровень погружения в значительной
+												степени обусловливает важность глубокомысленных
+												рассуждений.
+											</p>
 										</div>
-										<p class="reviews__item-content_description">
-											Господа, глубокий уровень погружения в значительной
-											степени обусловливает важность глубокомысленных
-											рассуждений.
-										</p>
 									</div>
-								</div>
-							</div>
-							<div class="embla__slide">
-								<div
-									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_3_bg.png);
-									">
-									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar3.png"
-											alt="Артур Усович"
-											width="80"
-											height="80" />
-										<div class="reviews__item-content_name">Артур Усович</div>
-										<p class="reviews__item-content_description">
-											Задача организации, в особенности же убеждённость
-											некоторых оппонентов предопределяет высокую
-											востребованность благоприятных перспектив.
-										</p>
+								</article>
+								<article class="embla__slide">
+									<h3 class="title__hidden">Отзыв Артура Усовича</h3>
+									<div
+										class="reviews__item"
+										data-bg="assets/img/reviews/review_3_bg.png">
+										<div class="reviews__item-content">
+											<picture
+												><source
+													type="image/webp"
+													srcset="assets/img/reviews/avatar3.webp" />
+												<img
+													class="reviews__item-content_avatar"
+													src="assets/img/reviews/avatar3.png"
+													alt="Артур Усович"
+													width="80"
+													height="80"
+													loading="lazy"
+											/></picture>
+											<cite class="reviews__item-content_name"
+												>Артур Усович</cite
+											>
+											<p class="reviews__item-content_description">
+												Задача организации, в особенности же убеждённость
+												некоторых оппонентов предопределяет высокую
+												востребованность благоприятных перспектив.
+											</p>
+										</div>
 									</div>
-								</div>
-							</div>
-							<div class="embla__slide">
-								<div
-									class="reviews__item"
-									style="
-										background-image: url(assets/img/reviews/review_1_bg.png);
-									">
-									<div class="reviews__item-content">
-										<img
-											class="reviews__item-content_avatar"
-											src="assets/img/reviews/avatar2.png"
-											alt="Егор Грей"
-											width="80"
-											height="80" />
-										<div class="reviews__item-content_name">Егор Грей</div>
-										<p class="reviews__item-content_description">
-											Разнообразный и богатый опыт говорит нам, что высокое
-											качество позиционных исследований предопределяет высокую
-											востребованность кластеризации усилий.
-										</p>
+								</article>
+								<article class="embla__slide">
+									<h3 class="title__hidden">Отзыв Егора Грея</h3>
+									<div
+										class="reviews__item"
+										data-bg="assets/img/reviews/review_1_bg.png">
+										<div class="reviews__item-content">
+											<picture
+												><source
+													type="image/webp"
+													srcset="assets/img/reviews/avatar2.webp" />
+												<img
+													class="reviews__item-content_avatar"
+													src="assets/img/reviews/avatar2.png"
+													alt="Егор Грей"
+													width="80"
+													height="80"
+													loading="lazy"
+											/></picture>
+											<div class="reviews__item-content_name">Егор Грей</div>
+											<p class="reviews__item-content_description">
+												Разнообразный и богатый опыт говорит нам, что высокое
+												качество позиционных исследований предопределяет высокую
+												востребованность кластеризации усилий.
+											</p>
+										</div>
 									</div>
-								</div>
+								</article>
 							</div>
 						</div>
+						<button
+							type="button"
+							class="reviews__btn reviews__btn_prev"
+							id="reviews-prev"
+							aria-label="Предыдущий отзыв">
+							<svg
+								width="32"
+								height="32"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								aria-hidden="true">
+								<path
+									d="M15 18L9 12L15 6"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+						</button>
+						<button
+							type="button"
+							class="reviews__btn reviews__btn_next"
+							id="reviews-next"
+							aria-label="Следующий отзыв">
+							<svg
+								width="32"
+								height="32"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								aria-hidden="true">
+								<path
+									d="M9 18L15 12L9 6"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round" />
+							</svg>
+						</button>
 					</div>
-					<button
-						type="button"
-						class="reviews__btn reviews__btn_prev"
-						id="reviews-prev"
-						aria-label="Предыдущий отзыв">
-						<svg
-							width="32"
-							height="32"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true">
-							<path
-								d="M15 18L9 12L15 6"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round" />
-						</svg>
-					</button>
-					<button
-						type="button"
-						class="reviews__btn reviews__btn_next"
-						id="reviews-next"
-						aria-label="Следующий отзыв">
-						<svg
-							width="32"
-							height="32"
-							viewBox="0 0 24 24"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true">
-							<path
-								d="M9 18L15 12L9 6"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round" />
-						</svg>
-					</button>
 				</div>
-			</div>
-		</section>
-		<!-- REVIEWS END -->
+			</section>
+			<!-- REVIEWS END -->
+		</main>
 		<!-- FOOTER START -->
 		<footer class="footer" id="footer" aria-labelledby="footer-heading">
-			<h2 id="footer-heading" class="footer__title title__hidden">Подвал</h2>
+			<h2 id="footer-heading" class="footer__title title__hidden">Контакты</h2>
 			<!-- FOOTER_CONTAINER START -->
 			<div class="container footer__container">
-				<div class="footer__row footer__row_contacts">
+				<address class="footer__row footer__row_contacts">
 					<div class="footer__contact-item">
 						<span class="footer__label">Телефон</span>
 						<a href="tel:+375123456789" class="footer__value"
@@ -788,15 +872,20 @@
 							>ourmail@gmail.com</a
 						>
 					</div>
-				</div>
+				</address>
 				<div class="footer__row footer__row_social">
 					<div class="footer__icons">
 						<a href="#" class="footer__icon-link" aria-label="TikTok">
 							<picture>
 								<source
+									type="image/webp"
+									media="(max-width: 500px)"
+									srcset="assets/img/footer_tiktok_mobile.webp" />
+								<source
 									media="(max-width: 500px)"
 									srcset="assets/img/footer_tiktok_mobile.png" />
-								<img src="assets/img/tiktok.png" alt="TikTok" />
+								<source type="image/webp" srcset="assets/img/tiktok.webp" />
+								<img src="assets/img/tiktok.png" alt="TikTok" loading="lazy" />
 							</picture>
 						</a>
 						<a
@@ -806,9 +895,17 @@
 							aria-label="ВКонтакте">
 							<picture>
 								<source
+									type="image/webp"
+									media="(max-width: 500px)"
+									srcset="assets/img/footer_vk_mobile.webp" />
+								<source
 									media="(max-width: 500px)"
 									srcset="assets/img/footer_vk_mobile.png" />
-								<img src="assets/img/vk_small.png" alt="ВКонтакте" />
+								<source type="image/webp" srcset="assets/img/vk_small.webp" />
+								<img
+									src="assets/img/vk_small.png"
+									alt="ВКонтакте"
+									loading="lazy" />
 							</picture>
 						</a>
 						<a
@@ -818,9 +915,19 @@
 							aria-label="Telegram">
 							<picture>
 								<source
+									type="image/webp"
+									media="(max-width: 500px)"
+									srcset="assets/img/footer_telegram_mobile.webp" />
+								<source
 									media="(max-width: 500px)"
 									srcset="assets/img/footer_telegram_mobile.png" />
-								<img src="assets/img/telegram_small.png" alt="Telegram" />
+								<source
+									type="image/webp"
+									srcset="assets/img/telegram_small.webp" />
+								<img
+									src="assets/img/telegram_small.png"
+									alt="Telegram"
+									loading="lazy" />
 							</picture>
 						</a>
 					</div>
@@ -832,12 +939,13 @@
 		<div
 			class="modal"
 			id="contact-modal"
+			role="dialog"
 			aria-hidden="true"
 			aria-modal="false"
 			aria-labelledby="contact-modal-title">
 			<div class="modal__inner">
 				<div class="modal__backdrop"></div>
-				<div class="modal__dialog" role="dialog">
+				<div class="modal__dialog">
 					<button
 						type="button"
 						class="modal__close"
@@ -1031,10 +1139,10 @@
 				</div>
 			</div>
 		</div>
-		<script src="/assets/libs/gsap.min.js"></script>
-		<script src="assets/libs/Flip.min.js"></script>
-		<script src="https://unpkg.com/embla-carousel@8.2.0/embla-carousel.umd.js"></script>
-		<script src="assets/js/main.js"></script>
+		<script src="/assets/libs/gsap.min.js" defer></script>
+		<script src="/assets/libs/Flip.min.js" defer></script>
+		<script src="/assets/libs/embla-carousel.umd.js" defer></script>
+		<script src="/assets/js/main.js" defer></script>
 	</body>
 	<!-- BODY END -->
 </html>

@@ -1,4 +1,42 @@
 (function () {
+	var loaderEl = document.getElementById("page-loader");
+	if (loaderEl) {
+		function hideLoader() {
+			loaderEl.classList.add("page-loader_hidden");
+			loaderEl.setAttribute("aria-hidden", "true");
+			window.removeEventListener("load", hideLoader);
+		}
+		if (document.readyState === "complete") hideLoader();
+		else window.addEventListener("load", hideLoader);
+	}
+
+	var reviewBgItems = document.querySelectorAll(".reviews__item[data-bg]");
+	if (reviewBgItems.length && "IntersectionObserver" in window) {
+		var bgObserver = new IntersectionObserver(
+			function (entries) {
+				entries.forEach(function (entry) {
+					if (!entry.isIntersecting) return;
+					var el = entry.target;
+					var bg = el.getAttribute("data-bg");
+					if (bg) {
+						el.style.backgroundImage = "url(" + bg + ")";
+						el.removeAttribute("data-bg");
+						bgObserver.unobserve(el);
+					}
+				});
+			},
+			{ rootMargin: "100px 0px", threshold: 0.01 }
+		);
+		reviewBgItems.forEach(function (el) {
+			bgObserver.observe(el);
+		});
+	} else if (reviewBgItems.length) {
+		reviewBgItems.forEach(function (el) {
+			var bg = el.getAttribute("data-bg");
+			if (bg) el.style.backgroundImage = "url(" + bg + ")";
+		});
+	}
+
 	var sectionIds = ["header", "quiz", "reviews", "footer"];
 	var sections = sectionIds
 		.map(function (id) {

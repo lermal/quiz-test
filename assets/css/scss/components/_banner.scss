@@ -20,6 +20,10 @@
 	@media screen and (max-width: $tablet-max) {
 		max-height: 479px;
 		background-image: url("../img/banner_phone_bg.png");
+		background-image: image-set(
+			url("../img/banner_phone_bg.webp") type("image/webp"),
+			url("../img/banner_phone_bg.png") 1x
+		);
 	}
 
 	&__container {
