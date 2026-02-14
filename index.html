@@ -12,10 +12,23 @@
 			content="Super Quiz — пройди супер-квиз и узнай результат." />
 		<title>Super Quiz</title>
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="preload" href="assets/css/style.css" as="style" />
 		<link rel="stylesheet" href="assets/css/style.css" />
 		<link
 			rel="preload"
-			href="assets/img/banner_phone_bg.png"
+			href="assets/fonts/PPNeueMachina-Ultrabold.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin />
+		<link
+			rel="preload"
+			href="assets/fonts/Raleway-v4020-Medium.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin />
+		<link
+			rel="preload"
+			href="assets/img/banner_phone_bg.webp"
 			as="image"
 			media="(max-width: 500px)" />
 	</head>
@@ -886,7 +899,7 @@
 									media="(max-width: 500px)"
 									srcset="assets/img/footer_tiktok_mobile.png" />
 								<source type="image/webp" srcset="assets/img/tiktok.webp" />
-								<img src="assets/img/tiktok.png" alt="TikTok" loading="lazy" />
+								<img src="assets/img/tiktok.png" alt="TikTok" width="341" height="70" loading="lazy" />
 							</picture>
 						</a>
 						<a
@@ -906,6 +919,8 @@
 								<img
 									src="assets/img/vk_small.png"
 									alt="ВКонтакте"
+									width="341"
+									height="70"
 									loading="lazy" />
 							</picture>
 						</a>
@@ -928,6 +943,8 @@
 								<img
 									src="assets/img/telegram_small.png"
 									alt="Telegram"
+									width="341"
+									height="70"
 									loading="lazy" />
 							</picture>
 						</a>

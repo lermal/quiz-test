@@ -4,10 +4,17 @@
 		function hideLoader() {
 			loaderEl.classList.add("page-loader_hidden");
 			loaderEl.setAttribute("aria-hidden", "true");
-			window.removeEventListener("load", hideLoader);
 		}
-		if (document.readyState === "complete") hideLoader();
-		else window.addEventListener("load", hideLoader);
+		function hideAfterFirstPaint() {
+			requestAnimationFrame(function () {
+				requestAnimationFrame(hideLoader);
+			});
+		}
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", hideAfterFirstPaint);
+		} else {
+			hideAfterFirstPaint();
+		}
 	}
 
 	var reviewBgItems = document.querySelectorAll(".reviews__item[data-bg]");
