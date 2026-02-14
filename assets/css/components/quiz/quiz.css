@@ -116,7 +116,6 @@
   min-width: 0;
   max-width: 100%;
   perspective: 800px;
-  overflow: hidden;
 }
 @media (max-width: 1279px) {
   .quiz__cards {
